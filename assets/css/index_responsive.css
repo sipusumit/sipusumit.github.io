@@ -1,0 +1,26 @@
+@media only screen and (max-width:700px){
+    .nav-container{
+        align-items:unset;
+        height: 80px;
+    }
+    .navMenu{
+        display: none;
+    }
+    .main-nav{
+        display: block;
+    }
+    .main-nav li{
+        margin: 19px 0;
+    }
+    .social-media{
+        padding: 10px 0;
+    }
+    .menu-btn{
+        display: flex;
+        margin-left: auto;
+        margin-top: 18px;
+    }
+    #logo{
+        margin-top: 25px;
+    }
+}
