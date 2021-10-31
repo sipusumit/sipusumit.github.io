@@ -2,6 +2,7 @@ const menuBtn = document.getElementById("menu-btn");
 const navMenu = document.getElementById("navMenu");
 const navContainer = document.getElementsByClassName("nav-container")[0];
 let menuOpen = false;
+let firstTime = true;
 menuBtn.addEventListener('click',()=>{
     if(!menuOpen){
         menuBtn.classList.add('open');

@@ -2,10 +2,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 
 body{
-    height: 100vh;
+    height: fit-content;
 }
 
 li a{
@@ -20,7 +21,7 @@ li a{
 
 .nav-container{
     min-height: 80px;
-    position: fixed;
+    position: sticky;
     align-items: center;
     top: 0;
     width: 100%;
@@ -104,9 +105,23 @@ i{
     color: #fff;
     font-size: 24px !important;
 }
-
+section{
+    height: 12.1vh;
+}
 footer{
     width: 100%;
     height: 100px;
     background: #050505;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+    justify-content: flex-end;
+}
+footer div{
+    margin-right: auto;
+}
+
+.highlight{
+    color: #fff !important;
 }
