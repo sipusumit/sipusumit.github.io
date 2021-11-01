@@ -1,0 +1,129 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    color: #fff;
+    font-family: "Roboto" , sans-serif;
+}
+a{
+    letter-spacing: 1px;
+}
+li,a{
+    transition: color .5s ease;
+    font-size: 20px;
+}
+body,html{
+    scroll-behavior: smooth;
+}
+body{
+    min-height: 100vh;
+    height: fit-content;
+}
+.nav-container{
+    display: flex;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #000;
+    align-items: center;
+    justify-content: space-between;
+}
+li:hover a{
+    color: rgb(111, 141, 238);
+}
+.logo{
+    margin: 0 20px;
+    font-size: 33px;
+}
+
+.menu{
+    height: inherit;
+    align-items: center;
+    display: flex;
+    transition: left .5s ease;
+}
+.menu nav ul,nav{
+    display: flex;
+}
+#main-menu li{
+    margin: 0 10px;
+}
+#social-menu{
+    justify-content: flex-end;
+}
+#social-menu li{
+    margin: 0 8px;
+}
+section{
+    height: 100vh;
+}
+
+#home{
+    background: rgb(110, 175, 235);
+}
+#projects{
+    background: rgb(110, 235, 137);
+}
+#about{
+    background: rgb(214, 110, 235);
+}
+#contact{
+    background: rgb(235, 170, 110);
+}
+footer{
+    height: 80px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    justify-content: space-between;
+}
+
+.toggle-btn{
+    padding: 0 20px;
+    display: none;
+}
+#toggle-check{
+    display: none;
+}
+/* responsivenes */
+
+@media only screen and (max-width:700px){
+    .toggle-btn{
+        display: block;
+    }
+    .menu{
+        /* margin-top: 159px; */
+        padding-left: 20px;
+        top: 80px;
+        position: fixed;
+        left: -100%;
+        background: #000;
+        width: 100%;
+        height: fit-content;
+    }
+    .main-nav, #main-menu{
+        display: block;
+    }
+    #main-menu li{
+        margin: 10px 0;
+    }
+    #social-menu{
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+}
+
+/* Animations */
+
+#toggle-check:checked ~.menu{
+    left: 0 !important;
+}
+#toggle-check:checked ~ .toggle-btn>.fa-bars::before{
+    content: "\f00d";
+}
+
