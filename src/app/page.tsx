@@ -131,23 +131,34 @@ const Navbar = () => {
 };
 
 const Hero = () => (
-  <section id="home" className="min-h-screen flex items-center justify-center bg-slate-950 text-white pt-16">
+  // Added 'overflow-hidden' to prevent horizontal scroll bars
+  <section id="home" className="min-h-screen flex items-center justify-center bg-slate-950 text-white pt-16 overflow-hidden">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center">
       <div className="text-center md:text-left md:w-1/2 space-y-6">
-        <h2 className="text-blue-500 font-semibold tracking-wide uppercase">Portfolio</h2>
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-sm font-medium border border-blue-500/20">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+          </span>
+          Available for hire
+        </div>
         <h1 className="text-4xl md:text-6xl font-bold leading-tight">
           Hi, I'm {personalInfo.name} <br />
-          <span className="text-slate-400 text-2xl md:text-4xl">{personalInfo.role}</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 text-3xl md:text-5xl">
+            {personalInfo.role}
+          </span>
         </h1>
-        <p className="text-slate-400 max-w-lg mx-auto md:mx-0 text-lg">
+        <p className="text-slate-400 max-w-lg mx-auto md:mx-0 text-lg leading-relaxed">
           {personalInfo.bio}
         </p>
-        <div className="flex space-x-4 justify-center md:justify-start">
+        
+        {/* Social Links */}
+        <div className="flex gap-4 justify-center md:justify-start pt-2">
           <a 
             href={personalInfo.socials.github} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="p-3 bg-slate-800 rounded-full hover:bg-blue-600 transition-all duration-300"
+            className="p-3 bg-slate-900 border border-slate-800 rounded-full hover:bg-blue-600 hover:border-blue-500 hover:text-white text-slate-400 transition-all duration-300"
           >
             <Github size={24} />
           </a>
@@ -155,29 +166,49 @@ const Hero = () => (
             href={personalInfo.socials.linkedin} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="p-3 bg-slate-800 rounded-full hover:bg-blue-600 transition-all duration-300"
+            className="p-3 bg-slate-900 border border-slate-800 rounded-full hover:bg-blue-600 hover:border-blue-500 hover:text-white text-slate-400 transition-all duration-300"
           >
             <Linkedin size={24} />
           </a>
           <a 
             href={`mailto:${personalInfo.email}`}
-            className="p-3 bg-slate-800 rounded-full hover:bg-blue-600 transition-all duration-300"
+            className="p-3 bg-slate-900 border border-slate-800 rounded-full hover:bg-blue-600 hover:border-blue-500 hover:text-white text-slate-400 transition-all duration-300"
           >
             <Mail size={24} />
           </a>
         </div>
-        <div className="pt-4">
-          <a href="#projects" className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors">
-            View Work
+
+        {/* CTA Buttons */}
+        <div className="pt-6 flex gap-4 justify-center md:justify-start">
+          <a href="#projects" className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-blue-500/25">
+            View Projects
+          </a>
+          <a href="#contact" className="px-8 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-lg font-medium transition-colors border border-slate-700">
+            Contact Me
           </a>
         </div>
       </div>
       
-      {/* Abstract Visual/Avatar Placeholder */}
-      <div className="md:w-1/2 flex justify-center mb-10 md:mb-0">
-        <div className="relative w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse absolute"></div>
-        <div className="relative w-48 h-48 md:w-64 md:h-64 bg-slate-800 rounded-full flex items-center justify-center border-4 border-slate-700 shadow-2xl">
-          <Code2 size={64} className="text-blue-400" />
+      {/* Visual / Avatar Area */}
+      <div className="md:w-1/2 flex justify-center mb-12 md:mb-0 mt-8 md:mt-0">
+        <div className="relative">
+          {/* Blur Effect */}
+          <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-2xl opacity-20 animate-pulse"></div>
+          
+          {/* Main Circle Icon */}
+          <div className="relative w-64 h-64 md:w-80 md:h-80 bg-slate-900 rounded-full flex items-center justify-center border border-slate-800 shadow-2xl">
+            <Cpu size={80} className="text-blue-500" />
+          </div>
+          
+          {/* Floating Icons - Fixed Positioning for Mobile */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-800 p-3 rounded-xl border border-slate-700 shadow-xl animate-bounce z-10">
+            <Code2 size={24} className="text-purple-400" />
+          </div>
+          
+          {/* CHANGED: Removed negative margin (-right-4) on mobile, kept it for desktop (md:-right-4) */}
+          <div className="absolute bottom-10 -right-2 md:-right-4 bg-slate-800 p-3 rounded-xl border border-slate-700 shadow-xl animate-bounce delay-700 z-10">
+            <Terminal size={24} className="text-green-400" />
+          </div>
         </div>
       </div>
     </div>
