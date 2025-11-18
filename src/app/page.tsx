@@ -62,21 +62,21 @@ const projects = [
     description: "A custom operating system kernel built from scratch. Features include memory management, interrupt handling, and a custom file system implementation. Demonstrates deep understanding of low-level computing and hardware architecture.",
     tags: ["C", "Assembly", "Kernel Dev", "Makefile"],
     githubUrl: "https://github.com/sipusumit/myos",
-    // liveUrl: "#" // You can remove this line if there is no live demo
+    liveUrl: "#" // You can remove this line if there is no live demo
   },
   {
     title: "Omlang",
     description: "A statically typed programming language compiler/interpreter. Includes a custom lexer, parser, and code generation backend. designed to be efficient and expressive.",
     tags: ["C/C++", "Compiler Design", "Lexing", "Parsing"],
     githubUrl: "https://github.com/sipusumit/omlang",
-    // liveUrl: "#"
+    liveUrl: "#"
   },
   {
     title: "Android Reverse Engineering",
     description: "Tools and scripts for analyzing obfuscated Android application code, focusing on security analysis and understanding internal app logic.",
     tags: ["Java", "Smali", "Frida", "Security"],
     githubUrl: "https://github.com/sipusumit", // Link to your profile or specific repo
-    // liveUrl: "#"
+    liveUrl: "#"
   }
 ];
 
