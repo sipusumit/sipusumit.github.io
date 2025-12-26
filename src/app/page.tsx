@@ -11,7 +11,8 @@ import {
   Code2, 
   Terminal, 
   Cpu, 
-  Globe 
+  Globe, 
+  Instagram
 } from 'lucide-react';
 
 // --- Configuration & Data ---
@@ -22,14 +23,15 @@ const personalInfo = {
   bio: "I am a passionate developer dedicated to building scalable and efficient web solutions. With a focus on clean code and user-centric design, I transform complex problems into elegant digital experiences.",
   email: "sipusumit@gmail.com", // Add your real email
   socials: {
-    github: "https://github.com/sipusumit",
-    linkedin: "https://www.linkedin.com/in/sumitkr0777/",
+    github: "https://github.sipusumit.in/",
+    linkedin: "https://linkedin.sipusumit.in/",
+    instagram: "https://ig.sipusumit.in/",
   }
 };
 
 const skills = [
   "React.js", "TypeScript", "Node.js", "Tailwind CSS", 
-  "Git", "SQL", "REST APIs", "Cloud Services"
+  "Git", "SQL", "REST APIs", "Cloud Services", "Rust", "C/C++"
 ];
 
 // const projects = [
@@ -62,21 +64,21 @@ const projects = [
     description: "A custom operating system kernel built from scratch. Features include memory management, interrupt handling, and a custom file system implementation. Demonstrates deep understanding of low-level computing and hardware architecture.",
     tags: ["C", "Assembly", "Kernel Dev", "Makefile"],
     githubUrl: "https://github.com/sipusumit/myos",
-    liveUrl: "#" // You can remove this line if there is no live demo
+    liveUrl: "https://github.com/sipusumit/myos" // You can remove this line if there is no live demo
   },
   {
     title: "Omlang",
     description: "A statically typed programming language compiler/interpreter. Includes a custom lexer, parser, and code generation backend. designed to be efficient and expressive.",
     tags: ["C/C++", "Compiler Design", "Lexing", "Parsing"],
     githubUrl: "https://github.com/sipusumit/omlang",
-    liveUrl: "#"
+    liveUrl: "https://github.com/sipusumit/omlang"
   },
   {
-    title: "Android Reverse Engineering",
-    description: "Tools and scripts for analyzing obfuscated Android application code, focusing on security analysis and understanding internal app logic.",
-    tags: ["Java", "Smali", "Frida", "Security"],
-    githubUrl: "https://github.com/sipusumit", // Link to your profile or specific repo
-    liveUrl: "#"
+    title: "Cosmic Controller",
+    description: "cross-platform desktop application designed to control the RGB lighting effects of Cosmic Byte compatible keyboards.",
+    tags: ["Rust", "Tauri", "Preact", "Typescript"],
+    githubUrl: "https://github.com/sipusumit/cosmiccontroller", // Link to your profile or specific repo
+    liveUrl: "https://github.com/sipusumit/cosmiccontroller"
   }
 ];
 
@@ -90,7 +92,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 font-bold text-xl tracking-wider">
-            SUMIT<span className="text-blue-500">.DEV</span>
+            SUMIT <span className="text-blue-500">KUMAR</span>
           </div>
           
           {/* Desktop Menu */}
@@ -169,6 +171,14 @@ const Hero = () => (
             className="p-3 bg-slate-900 border border-slate-800 rounded-full hover:bg-blue-600 hover:border-blue-500 hover:text-white text-slate-400 transition-all duration-300"
           >
             <Linkedin size={24} />
+          </a>
+          <a 
+            href={personalInfo.socials.instagram} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="p-3 bg-slate-900 border border-slate-800 rounded-full hover:bg-blue-600 hover:border-blue-500 hover:text-white text-slate-400 transition-all duration-300"
+          >
+            <Instagram size={24} />
           </a>
           <a 
             href={`mailto:${personalInfo.email}`}
@@ -331,6 +341,7 @@ const Footer = () => (
     <div className="flex justify-center space-x-4 mt-4">
       <a href={personalInfo.socials.github} className="hover:text-white transition-colors">GitHub</a>
       <a href={personalInfo.socials.linkedin} className="hover:text-white transition-colors">LinkedIn</a>
+      <a href={personalInfo.socials.instagram} className="hover:text-white transition-colors">Instagram</a>
     </div>
   </footer>
 );

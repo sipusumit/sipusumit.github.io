@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Sumit Kumar | Software Engineer",
   description: "Portfolio of Sumit Kumar - Software Engineer specializing in React, Next.js, and modern web development.",
   icons: {
-    icon: "/favicon.svg", // Optional: Add a custom favicon if you have one
+    icon: "/favicon.ico", // Optional: Add a custom favicon if you have one
   },
 };
 
