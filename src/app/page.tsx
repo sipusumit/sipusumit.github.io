@@ -347,8 +347,33 @@ const Footer = () => (
 );
 
 export default function Portfolio() {
+
+  // Define JSON-LD for a Person
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": personalInfo.name,
+    "url": "https://sipusumit.in", // Your actual URL
+    "sameAs": [
+      personalInfo.socials.github,
+      personalInfo.socials.linkedin,
+      personalInfo.socials.instagram,
+      // Add Twitter/X if you have it
+    ],
+    "jobTitle": personalInfo.role,
+    "description": personalInfo.bio,
+    "email": personalInfo.email,
+    "knowsAbout": skills
+  };
+
   return (
     <div className="bg-slate-950 min-h-screen">
+      {/* Add this Script tag */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      
       <Navbar />
       <main>
         <Hero />
